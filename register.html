@@ -5,48 +5,31 @@
 	<meta name="theme-color" content="#0072BC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sign in</title>
-	<link rel="icon" href="media/images/tsu-logo.png" type="image/png">
+	<link rel="icon" href="media/register/images/tsu-logo.png" type="image/png">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="media/css/register.css">
+    <link rel="stylesheet" type="text/css" href="media/register/css/register.css">
 </head>
 <body>
 
 	<main>
 		<div class="container">
 			<div class="register">
-			<div class="left">
-				<img src="media/images/tsu-logo.png" alt="tsu-logo">
-			</div>
-			<div class="right">
-				<div class="alert">
-					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-					Wrong email or password.
+				<div class="left">
+					<img src="media/register/images/tsu-logo.png" alt="tsu-logo">
 				</div>
-				<form method="POST" class="login-form">
-					<input type="email" placeholder="Email" required>
-					<input type="password" placeholder="Password" required>
-					<input type="submit" value="Sign In">
-					<span class="account">Not registered?
-						<a class="signin" href="javascript:void(0)">Create an account</a>
-					</span>
-				</form>
-				<form method="POST" class="register-form">
-					<input type="text" placeholder="First Name" required>
-					<input type="text" placeholder="Last Name" required>
-					<input type="email" placeholder="Email" required>
-					<input type="password" placeholder="Password" required>
-					<input type="password" placeholder="Repeat Password" required>
-					<input type="submit" value="Sign Up">
-					<span class="account">Already registered?
-						<a class="signup" href="javascript:void(0)">Sign in</a>
-					</span>
-				</form>
+				<div class="right">
+					<div class="alert">
+						<span>Wrong email or password</span>
+					</div>
+					<form method="POST" class="login-form">
+						<input type="email" placeholder="Email" required>
+						<input type="password" placeholder="Password" required>
+						<input type="submit" value="Sign in">
+					</form>
+				</div>
 			</div>
-		</div>
 		</div>
 	</main>
-
-	<script src="media/js/register.js"></script>
 
 </body>
 </html>

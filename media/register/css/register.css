@@ -29,15 +29,14 @@ main {
 }
 
 .register {
-	width: 65%;
-	max-width: 832px;
-	height: 550px;
+	width: 832px;
+	height: 500px;
 	margin: 0 auto;
 	z-index: 3;
 	display: flex;
 	background-color: #fff;
 	border-radius: 30px;
-	box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+	box-shadow: 5px 7px 15px rgba(0,0,0,0.3);
 }
 
 .left {
@@ -72,10 +71,6 @@ form {
 	align-items: center;
 }
 
-.register-form {
-	display: none;
-}
-
 input {
 	width: 250px;
 	padding: 15px;
@@ -83,12 +78,6 @@ input {
 	border: none;
 	box-sizing: border-box;
 	outline: 0;
-}
-
-input[type="text"] {
-	background: url('../images/user.png') 95% 50% no-repeat;
-	background-color: #eee;
-	padding-right: 40px;
 }
 
 input[type="password"] {
@@ -132,33 +121,17 @@ input[type="submit"]:hover {
 .alert {
     width: 100%;
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
     background-color: #f44336;
     color: white;
     box-sizing: border-box;
 }
 
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: black;
-}
-
 @media only screen and (max-width: 991.98px) {
 
 	.register {
-		width: 100%;
-		margin: 0 20px;
+		width: 85%;
 	}
 }
 
@@ -171,7 +144,7 @@ input[type="submit"]:hover {
 	.register {
 		position: absolute;
 		top: 0;
-		height: 1000px;
+		width: 100%;
 		margin: 0;
 		flex-direction: column;
 		border-radius: 0;
@@ -179,19 +152,12 @@ input[type="submit"]:hover {
 	}
 
 	.left {
+		flex-basis: 35%;
 		border-radius: 0;
 	}
 
 	.left img {
-		width: 200px;
-		height: 200px;
+		width: 150px;
 		line-height: 200px;
-	}
-}
-
-@media only screen and (max-width: 575.98px) {
-
-	input, select {
-		width: 230px;
 	}
 }
