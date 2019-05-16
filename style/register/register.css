@@ -23,7 +23,7 @@
 main {
 	width: 100%;
 	height: 100vh;
-	background-image: url('../images/tsu-1.jpg');
+	background-image: url('../../images/tsu-1.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -45,7 +45,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('../images/tsu-1.jpg');
+	background-image: url('../../images/tsu-1.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -83,14 +83,14 @@ input:focus {
 	outline: none;
 }
 
-input[type="password"] {
-	background: url('../images/password.png') 95% 50% no-repeat;
+input[type="email"] {
+	background: url('../../images/email.png') 95% 50% no-repeat;
 	background-color: #eee;
 	padding-right: 40px;
 }
 
-input[type="email"] {
-	background: url('../images/email.png') 95% 50% no-repeat;
+input[type="password"] {
+	background: url('../../images/password.png') 95% 50% no-repeat;
 	background-color: #eee;
 	padding-right: 40px;
 }
