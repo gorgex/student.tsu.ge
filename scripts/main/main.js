@@ -2,6 +2,14 @@ function _(element) {
 	return document.querySelector(element);
 }
 
+_('.languagepicker').addEventListener('click', function() {
+	if(this.innerHTML == "Eng") {
+		this.innerHTML = "Geo";
+	} else {
+		this.innerHTML = "Eng";
+	}
+});
+
 // function scrollToTop() {
 // 	var timer = setInterval(function() {
 // 		if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
