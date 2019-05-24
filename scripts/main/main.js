@@ -10,6 +10,24 @@ _('.languagepicker').addEventListener('click', function() {
 	}
 });
 
+_('.burger-menu')
+	.addEventListener('click', function(event) {
+		_('.circular').style.top = event.clientY + "px";
+		_('.circular').style.left = event.clientX + "px";
+		_('.circular').classList.toggle('show');
+		this.classList.toggle('open');
+		// _('.nav-icon-wrapper').classList.toggle('active');
+		// if(this.classList.contains('open')) {
+		// 	hide('.startpage', 250);
+		// 	show('nav', 250);
+		// } else {
+		// 	if(!case_opened && visible_page == "main") {
+		// 		show('.startpage', 50);
+		// 	}
+		// 	hide('nav');
+		// }
+	});
+
 // function scrollToTop() {
 // 	var timer = setInterval(function() {
 // 		if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
