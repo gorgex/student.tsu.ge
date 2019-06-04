@@ -2,32 +2,6 @@ function _(element) {
 	return document.querySelector(element);
 }
 
-_('.languagepicker').addEventListener('click', function() {
-	if(this.innerHTML == "Eng") {
-		this.innerHTML = "Geo";
-	} else {
-		this.innerHTML = "Eng";
-	}
-});
-
-_('.burger-menu')
-	.addEventListener('click', function(event) {
-		_('.circular').style.top = event.clientY + "px";
-		_('.circular').style.left = event.clientX + "px";
-		_('.circular').classList.toggle('show');
-		this.classList.toggle('open');
-		// _('.nav-icon-wrapper').classList.toggle('active');
-		// if(this.classList.contains('open')) {
-		// 	hide('.startpage', 250);
-		// 	show('nav', 250);
-		// } else {
-		// 	if(!case_opened && visible_page == "main") {
-		// 		show('.startpage', 50);
-		// 	}
-		// 	hide('nav');
-		// }
-	});
-
 // function scrollToTop() {
 // 	var timer = setInterval(function() {
 // 		if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
@@ -38,6 +12,24 @@ _('.burger-menu')
 // 	}, 10);
 // }
 
+_('.languagepicker')
+	.addEventListener('click', function() {
+		if(this.innerHTML == "Eng") {
+			this.innerHTML = "Geo";
+		} else {
+			this.innerHTML = "Eng";
+		}
+	});
+
+_('.burger-menu')
+	.addEventListener('click', function(event) {
+		_('.circular').style.top = event.clientY + "px";
+		_('.circular').style.left = event.clientX + "px";
+		_('.circular').classList.toggle('show');
+		this.classList.toggle('open');
+		_('header .container nav').classList.toggle('show');
+	});
+
 // window.addEventListener('scroll', function() {
 // 	if(document.documentElement.scrollTop > 30) {
 // 		document.querySelector('nav').classList.add('sticky');
@@ -46,15 +38,17 @@ _('.burger-menu')
 // 	}
 // });
 
-// document.querySelector('.courses')
-// 	.addEventListener('mouseover', function() {
-// 		this.classList.add('active');
-// 	});
+document.querySelector('.courses')
+	.addEventListener('mouseover', function() {
+		_('.list-of-courses').classList.add('show');
+		// this.classList.add('active');
+	});
 
-// document.querySelector('.courses')
-// 	.addEventListener('mouseout', function() {
-// 		this.classList.remove('active');
-// 	});
+document.querySelector('.courses')
+	.addEventListener('mouseout', function() {
+		// this.classList.remove('active');
+		_('.list-of-courses').classList.remove('show');
+	});
 
 // document.querySelector('.language')
 // 	.addEventListener('click', function(e) {

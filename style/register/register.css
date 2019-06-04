@@ -4,7 +4,8 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	font-weight: 500;
 }
 
 main {
@@ -114,7 +115,7 @@ input[type="submit"]:hover {
 @media only screen and (max-width: 1024px) {
 
 	.register {
-		width: 84%;
+		width: 80%;
 	}
 }
 

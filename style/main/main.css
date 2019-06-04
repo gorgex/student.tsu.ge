@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -8,6 +8,7 @@
 	overflow: hidden;
 	user-select: none;
 	font-family: 'Roboto', 'Helvetica', sans-serif;
+	font-weight: 500;
 }
 
 body {
@@ -72,7 +73,7 @@ header .container nav .languagepicker {
 	color: #2C3E50;
 	font-family: 'Roboto Condensed';
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 700;
 	margin-right: 70px;
 	text-transform: uppercase;
 }
@@ -107,6 +108,26 @@ header .container nav .login:hover {
 	background-color: #0072BC;
 }
 
+main .container .list-of-courses {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	display: none;
+	flex-direction: column;
+	width: 300px;
+	height: 400px;
+	background-color: #ECF0F1;
+	/* background-color: orange; */
+}
+
+main .container .list-of-courses.show {
+	display: flex;
+}
+
+.courses {
+	padding: 30px 0;
+}
+
 header .container .burger-menu {
 	width: 30px;
 	height: 60px;
@@ -137,7 +158,7 @@ header .container .burger-menu.open::after {
 	width: 0px;
 	height: 0px;
 	border-radius: 50%;
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.95);
 	box-sizing: border-box;
 	overflow: hidden;
 	z-index: 3;
@@ -328,38 +349,28 @@ input[name="search"] {
 .developer {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: 50px;
 	width: 350px;
 	height: 450px;
 	background-image: url(../../images/developer.png);
 	z-index: 1;
 }
 
-/* .developer img {
-	position: absolute;
-	bottom: 0;
-	right: 5%;
-	transform: translateX(5%);
-} */
-
 footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 100px;
+	height: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #2C3E50;
-}
-
-.contact {
-	color: #fff;
+	color: #ECF0F1;
 	text-align: center;
 }
 
-.to-top {
+/* .to-top {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -372,7 +383,7 @@ footer {
 	border-radius: 50% 50% 0 0;
 	background-color: #0072BC;
 	cursor: pointer;
-}
+} */
 
 @media only screen and (max-width: 1200px) {
 
@@ -388,24 +399,42 @@ footer {
 	}
 
 	header .container {
+		position: initial;
 		justify-content: space-between;
 	}
 
 	header .container nav {
-		display: none;
-		background-color: orange;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		opacity: 0;
+		transition: .1s;
+	}
+
+	header .container nav.show {
+		opacity: 1;
+		z-index: 4;
+		transition: .5s .3s;
 	}
 
 	header .container .burger-menu {
 		display: flex;
 	}
 
-	form {
-		width: 310px;
-	}
-
 	input {
 		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	form {
+		width: 95%;
 	}
 }
 
