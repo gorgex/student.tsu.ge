@@ -20,6 +20,36 @@ body {
 	max-width: 1170px;
 }
 
+.preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(-45deg, rgba(100, 114, 188, 1) 0%, rgba(0, 130, 214, 1) 100%);
+	z-index: 99;
+}
+
+.loader {
+	width: 80px;
+	height: 80px;
+	animation: .7s float infinite linear;
+}
+
+.loader img {
+	width: 100%;
+	height: 100%;
+}
+
+.preloader.done {
+	transform: translateY(-100%);
+	transition: .4s;
+	visibility: hidden;
+}
+
 header {
 	width: 100%;
 	position: fixed;
@@ -67,6 +97,86 @@ header .container nav div {
 	justify-content: center;
 }
 
+header .container nav .courses {
+	padding: 20px 0;
+	cursor: pointer;
+}
+
+header .container nav .courses > a {
+	color: #2C3E50;
+}
+
+header .container nav .courses .list-of-courses {
+	position: absolute;
+	top: 7px;
+	left: -20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 70px 20px 0 20px;
+	background-color: transparent;
+	border-radius: 0 3px 3px 3px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+}
+
+header .container nav .courses .list-of-courses::before {
+	content: '';
+	position: absolute;
+	top: 30px;
+	left: 140px;
+	border: 20px solid transparent;
+	border-bottom-color: #FAFAFA;
+}
+
+header .container nav .courses .list-of-courses.show {
+	top: 0;
+	opacity: 1;
+	visibility: visible;
+	transition: .3s;
+}
+
+header .container nav .courses .list-of-courses span {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #FAFAFA;
+}
+
+header .container nav .courses .list-of-courses span a {
+	width: 100%;
+	padding: 20px 15px;
+	color: #2C3E50;
+}
+
+header .container nav .courses .list-of-courses span a:hover {
+	background-color: #ECF0F1;
+}
+
+/* header .container nav .courses .list-of-courses span div {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	left: 97%;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	visibility: hidden;
+	opacity: 0;
+	transition: .3s;
+}
+
+header .container nav .courses .list-of-courses span.active div {
+	left: 100%;
+	visibility: visible;
+	opacity: 1;
+	transition: .5s;
+} */
+
 header .container nav .languagepicker {
 	position: relative;
 	color: #2C3E50;
@@ -107,66 +217,6 @@ header .container nav .login:hover {
 	background-color: #0072BC;
 }
 
-header .container nav .courses {
-	padding: 20px 0;
-	cursor: pointer;
-}
-
-header .container nav .courses > a {
-	color: #2C3E50;
-}
-
-header .container .list-of-courses {
-	position: absolute;
-	top: 0;
-	left: -20px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	padding: 70px 20px 0 20px;
-	background-color: transparent;
-	border-radius: 0 3px 3px 3px;
-	visibility: hidden;
-	opacity: 0;
-	transition: .3s;
-}
-
-header .container .list-of-courses::before {
-	content: '';
-	position: absolute;
-	top: 30px;
-	left: 37%;
-	border: 20px solid transparent;
-	border-bottom-color: #ECF0F1;
-	transform: translateX(-37%);
-}
-
-header .container .list-of-courses.show {
-	visibility: visible;
-	opacity: 1;
-	transition: .3s;
-}
-
-header .container .list-of-courses span {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	background-color: #ECF0F1;
-}
-
-header .container .list-of-courses span a {
-	width: 100%;
-	padding: 20px 15px;
-	color: #2C3E50;
-}
-
-header .container .list-of-courses span a:hover {
-	color: #FFFFFF;
-	background-color: #2C3E50;
-}
-
 header .container .burger-menu {
 	width: 30px;
 	height: 60px;
@@ -192,7 +242,7 @@ header .container .burger-menu.open::after {
 	content: '\f00d';
 }
 
-.circular {
+header .container .circular {
 	position: fixed;
 	width: 0px;
 	height: 0px;
@@ -208,7 +258,7 @@ header .container .burger-menu.open::after {
 	transition: all .5s 0ms ease;
 }
 
-.circular.show {
+header .container .circular.show {
 	width: 500vw;
 	height: 500vw;
 	transition: all .7s 100ms ease;
@@ -224,6 +274,7 @@ main {
 
 main .container {
 	height: 100vh;
+	z-index: 0;
 }
 
 form {
@@ -312,6 +363,21 @@ footer {
 	background-color: #0072BC;
 	cursor: pointer;
 } */
+
+@keyframes float {
+
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(-20px) scale(1.03);
+	}
+
+	100% {
+		transform: translateY(0px);	
+	}
+}
 
 @media only screen and (max-width: 1200px) {
 

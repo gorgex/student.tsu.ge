@@ -1,5 +1,19 @@
-function _(element) {
+const get = (element) => {
 	return document.querySelector(element);
+}
+
+const getAll = (elements) => {
+	return document.querySelectorAll(elements);
+}
+
+document.body.onload = () => {
+	setTimeout(() => {
+		const preloader = get('.preloader');
+		if(!preloader.classList.contains('done'))
+		{
+			preloader.classList.add('done');
+		}
+	}, 700);
 }
 
 // function scrollToTop() {
@@ -12,8 +26,8 @@ function _(element) {
 // 	}, 10);
 // }
 
-_('.languagepicker')
-	.addEventListener('click', function() {
+get('.languagepicker')
+	.addEventListener('click', () => {
 		if(this.innerHTML == "Eng") {
 			this.innerHTML = "Geo";
 		} else {
@@ -21,61 +35,39 @@ _('.languagepicker')
 		}
 	});
 
-_('.burger-menu')
-	.addEventListener('click', function(event) {
-		_('.circular').style.top = event.clientY + "px";
-		_('.circular').style.left = event.clientX + "px";
-		_('.circular').classList.toggle('show');
-		this.classList.toggle('open');
-		_('header .container nav').classList.toggle('show');
+get('.burger-menu')
+	.addEventListener('click', (event) => {
+		get('.circular').style.top = event.clientY + "px";
+		get('.circular').style.left = event.clientX + "px";
+		get('.circular').classList.toggle('show');
+		get('.burger-menu').classList.toggle('open');
+		get('header .container nav').classList.toggle('show');
 	});
 
-// window.addEventListener('scroll', function() {
-// 	if(document.documentElement.scrollTop > 30) {
-// 		document.querySelector('nav').classList.add('sticky');
-// 	} else {
-// 		document.querySelector('nav').classList.remove('sticky');
-// 	}
-// });
-
-document.querySelector('.courses')
-	.addEventListener('mouseover', function() {
-		_('.list-of-courses').classList.add('show');
-		// this.classList.add('active');
+get('.courses')
+	.addEventListener('mouseover', () => {
+		get('.list-of-courses').classList.add('show');
+		get('.courses').classList.add('active');
 	});
 
-document.querySelector('.courses')
-	.addEventListener('mouseout', function() {
-		// this.classList.remove('active');
-		_('.list-of-courses').classList.remove('show');
+get('.courses')
+	.addEventListener('mouseout', () => {
+		get('.list-of-courses').classList.remove('show');
+		get('.courses').classList.remove('active');
 	});
-
-// document.querySelector('.language')
-// 	.addEventListener('click', function(e) {
-// 		if(e.target.name == 'geo') {
-// 			document.images[e.target.name].src = 'media/images/united-kingdom.svg';
-// 			document.images[e.target.name].name = 'eng';
-// 			document.images[e.target.name].title = 'English';
-// 		} else if(e.target.name == 'eng') {
-// 			document.images[e.target.name].src = 'media/images/georgia.svg';
-// 			document.images[e.target.name].name = 'geo';
-// 			document.images[e.target.name].title = 'ქართული';
-// 		}
-// 	});
 
 // document.querySelector('.to-top')
 // 	.addEventListener('click', function() {
 // 		scrollToTop();
 // 	});
 
-// var expandables = document.getElementsByClassName('expandable');
+// const listItems = getAll('.list-of-courses span');
 
-// for(var i = 0; i < expandables.length; i++) {
-// 	expandables[i].addEventListener('mouseover', function() {
-// 		this.getElementsByTagName('ul')[0].classList.add('active');
+// for(let item of listItems) {
+// 	item.addEventListener('mouseover', () => {
+// 		item.classList.add('active');
 // 	});
-
-	// expandables[i].addEventListener('mouseout', function() {
-	// 	this.getElementsByTagName('ul')[0].classList.remove('active');
-	// });
+// 	item.addEventListener('mouseout', () => {
+// 		item.classList.remove('active');
+// 	});
 // }
