@@ -25,8 +25,8 @@ main {
 }
 
 .register {
-	width: 832px;
-	height: 450px;
+	width: 630px;
+	height: 300px;
 	display: flex;
 	background-color: #FFFFFF;
 	border-radius: 30px;
@@ -34,7 +34,7 @@ main {
 }
 
 .left {
-	flex-basis: 45%;
+	flex-basis: 52%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -46,11 +46,12 @@ main {
 }
 
 .right {
-	flex-basis: 55%;
+	flex-basis: 48%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 30px;
 }
 
 form {
@@ -115,7 +116,7 @@ input[type = submit]:hover {
 @media only screen and (max-width: 1024px) {
 
 	.register {
-		width: 80%;
+		/* width: 80%; */
 	}
 }
 

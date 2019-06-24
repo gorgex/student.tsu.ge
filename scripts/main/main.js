@@ -16,6 +16,16 @@ document.body.onload = () => {
 	}, 700);
 }
 
+window.addEventListener('resize', () => {
+	if(window.innerWidth > 768) {
+		get('.circular').style.top = 0;
+		get('.circular').style.left = '100%';
+		get('.circular').classList.remove('show');
+		get('.burger-menu').classList.remove('open');
+		get('header .container nav').classList.remove('show');
+	}
+});
+
 // function scrollToTop() {
 // 	var timer = setInterval(function() {
 // 		if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
