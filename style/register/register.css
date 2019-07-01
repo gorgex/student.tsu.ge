@@ -113,13 +113,6 @@ input[type = submit]:hover {
 	transition: .3s;
 }
 
-@media only screen and (max-width: 1024px) {
-
-	.register {
-		/* width: 80%; */
-	}
-}
-
 @media only screen and (max-width: 767px) {
 
 	main {

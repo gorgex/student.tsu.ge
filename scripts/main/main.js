@@ -6,6 +6,18 @@ const getAll = (elements) => {
 	return document.querySelectorAll(elements);
 }
 
+const show = (element, delay = 0) => {
+	window.setTimeout(() => {
+		get(element).style.display = 'flex';
+    }, delay);
+}
+
+const hide = (element, delay = 0) => {
+	window.setTimeout(() => {
+		get(element).style.display = 'none';
+    }, delay);
+}
+
 document.body.onload = () => {
 	setTimeout(() => {
 		const preloader = get('.preloader');
@@ -38,10 +50,11 @@ window.addEventListener('resize', () => {
 
 get('.languagepicker')
 	.addEventListener('click', () => {
-		if(this.innerHTML == "Eng") {
-			this.innerHTML = "Geo";
+		let lang = get('.languagepicker');
+		if(lang.innerHTML == "Eng") {
+			lang.innerHTML = "Geo";
 		} else {
-			this.innerHTML = "Eng";
+			lang.innerHTML = "Eng";
 		}
 	});
 
@@ -52,6 +65,7 @@ get('.burger-menu')
 		get('.circular').classList.toggle('show');
 		get('.burger-menu').classList.toggle('open');
 		get('header .container nav').classList.toggle('show');
+		get('.list-of-courses').classList.toggle('show');
 	});
 
 get('.courses')
@@ -62,7 +76,9 @@ get('.courses')
 
 get('.courses')
 	.addEventListener('mouseout', () => {
-		get('.list-of-courses').classList.remove('show');
+		if(window.innerWidth > 768) {
+			get('.list-of-courses').classList.remove('show');
+		}
 		get('.courses').classList.remove('active');
 	});
 

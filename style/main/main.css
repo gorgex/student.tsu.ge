@@ -157,26 +157,6 @@ header .container nav .courses .list-of-courses span a:hover {
 	background-color: #ECF0F1;
 }
 
-/* header .container nav .courses .list-of-courses span div {
-	position: absolute;
-	top: 0;
-	left: 100%;
-	left: 97%;
-	width: 300px;
-	display: flex;
-	flex-direction: column;
-	visibility: hidden;
-	opacity: 0;
-	transition: .3s;
-}
-
-header .container nav .courses .list-of-courses span.active div {
-	left: 100%;
-	visibility: visible;
-	opacity: 1;
-	transition: .5s;
-} */
-
 header .container nav .languagepicker {
 	position: relative;
 	color: #2C3E50;
@@ -290,7 +270,7 @@ form {
 }
 
 input[name = search] {
-	width: 410px;
+	width: 480px;
 	height: 50px;
 	border: none;
 	padding: 0 60px 0 20px;
@@ -325,11 +305,12 @@ input[name = search] {
 .developer {
 	position: absolute;
 	right: 0;
-	bottom: 0;
-	width: 350px;
-	height: 450px;
+	bottom: 40px;
+	width: 380px;
+	height: 380px;
 	background-image: url(../../images/developer.png);
-	background-position: 50% 40%;
+	background-size: contain;
+	background-position: 100%;
 	background-repeat: no-repeat;
 	z-index: 1;
 }
@@ -346,7 +327,7 @@ footer {
 	background-color: #2C3E50;
 	color: #ECF0F1;
 	text-align: center;
-	z-index: 2;
+	z-index: 0;
 }
 
 /* .to-top {
@@ -393,27 +374,44 @@ footer {
 	}
 
 	header .container {
-		position: initial;
 		justify-content: space-between;
 	}
 
 	header .container nav {
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: flex-start;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100vh;
+		padding-bottom: 30px;
+		visibility: hidden;
 		opacity: 0;
 		transition: .1s;
+		overflow-y: scroll;
 	}
 
 	header .container nav.show {
+		visibility: visible;
 		opacity: 1;
 		z-index: 4;
 		transition: .5s .3s;
+	}
+
+	header .container nav .courses > a {
+		display: none;
+	}
+
+	header .container nav .courses .list-of-courses {
+		position: initial;
+		width: 100%;
+		display: flex;
+	}
+
+	header .container nav .courses .list-of-courses::before {
+		content: none;
 	}
 
 	header .container .burger-menu {
