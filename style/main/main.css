@@ -253,7 +253,7 @@ main {
 }
 
 main .container {
-	height: 100vh;
+	height: calc(100vh - 40px);
 	z-index: 0;
 }
 
@@ -305,20 +305,10 @@ input[name = search] {
 .developer {
 	position: absolute;
 	right: 0;
-	bottom: 40px;
-	width: 380px;
-	height: 380px;
-	background-image: url(../../images/developer.png);
-	background-size: contain;
-	background-position: 100%;
-	background-repeat: no-repeat;
-	z-index: 1;
+	bottom: 0;
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 	height: 40px;
 	display: flex;
@@ -365,9 +355,17 @@ footer {
 	.container {
 		width: 97%;
 	}
+
+	header, footer {
+		position: initial;
+	}
 }
 
 @media only screen and (max-width: 768px) {
+
+	* {
+		-webkit-tap-highlight-color: transparent;
+	}
 
 	.container {
 		width: 97%;
@@ -416,6 +414,10 @@ footer {
 
 	header .container .burger-menu {
 		display: flex;
+	}
+
+	form {
+		top: 25%;
 	}
 
 	input {
