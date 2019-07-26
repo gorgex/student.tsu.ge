@@ -142,3 +142,26 @@ main .container .weeks-list .week div::before {
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 }
+
+@media only screen and (max-width: 1200px) {
+	
+	main .sidebar {
+		position: absolute;
+		top: 60px;
+		left: 50%;
+		flex-direction: row;
+		transform: translateX(-50%);
+	}
+
+	main .sidebar a:first-of-type {
+		padding-top: 0;
+	}
+
+	main .sidebar a span {
+		left: 0;
+	}
+
+	main .container .weeks-list {
+		margin: 130px auto;
+	}
+}
