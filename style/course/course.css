@@ -73,7 +73,7 @@ main .sidebar a:nth-child(5)::before {
 
 main .container .weeks-list {
 	position: relative;
-	max-width: 880px;
+	max-width: 850px;
 	margin: 100px auto;
 	display: flex;
 	flex-direction: column;
@@ -91,25 +91,44 @@ main .container .weeks-list .line {
 }
 
 main .container .weeks-list .week {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 100px;
+}
+
+main .container .weeks-list .week a {
+	color: #2C3E50;
+}
+
+main .container .weeks-list .week a span {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	word-spacing: 10px;
+	color: #0072BC;
+}
+
+main .container .weeks-list .week div {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	margin-bottom: 100px;
+	margin-right: 100px;
 }
 
-main .container .weeks-list .week span:nth-child(1) {
+main .container .weeks-list .week div span:nth-child(1) {
 	text-transform: uppercase;
 	font-size: 20px;
 	font-family: 'Roboto Condensed';
 }
 
-main .container .weeks-list .week span:nth-child(2) {
+main .container .weeks-list .week div span:nth-child(2) {
 	font-size: 28px;
 	font-family: 'Roboto Condensed';
 }
 
-main .container .weeks-list .week::before {
+main .container .weeks-list .week div::before {
 	content: '';
 	position: absolute;
 	top: 50%;
